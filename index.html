@@ -18,9 +18,9 @@
 
     <script>
         let inputDir = {x:0, y:0};
-        let foodsound = new Audio('music/food.mp3');
-        let bgmusic = new Audio('music/bgmusic.mp3');
-        let over = new Audio('music/over.wav');
+        // let foodsound = new Audio('music/food.mp3');
+        // let bgmusic = new Audio('music/bgmusic.mp3');
+        // let over = new Audio('music/over.wav');
         let speed = 5;
         let lastPaintTime = 0;
         let snakeArr = [
@@ -62,7 +62,7 @@
 
             if(snakeArr[0].y ===food.y && snakeArr[0].x ===food.x){
                 score += 1;
-                if(score> hiscoreval){
+                if(score > hiscoreval){
                     hiscoreval = score;
                     localStorage.setItem("highscore", JSON.stringify(hiscoreval));
                     hiscoreBox.innerHTML = "High Score: "+ hiscoreval;
@@ -113,7 +113,7 @@
             
         }
         else{
-                hiscoreval.JSON.parse(highscore);
+                hiscoreval = JSON.parse(highscore);
                 hiscoreBox.innerHTML = "High Score: "+ highscore;
             }
 
