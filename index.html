@@ -10,12 +10,17 @@
 <body>
     <!-- section start -->
     <div class="container">
+        <div id="scoreBox">Score: 0</div>
+        <div id="hiscoreBox">highscore: 0</div>
         <div id="board"></div>
     </div>
     <!-- section end -->
 
     <script>
         let inputDir = {x:0, y:0};
+        let foodsound = new Audio('music/food.mp3');
+        let bgmusic = new Audio('music/bgmusic.mp3');
+        let over = new Audio('music/over.wav');
         let speed = 5;
         let lastPaintTime = 0;
         let snakeArr = [
@@ -56,6 +61,13 @@
             // if u eaten the food, increment the score and regenerate the food
 
             if(snakeArr[0].y ===food.y && snakeArr[0].x ===food.x){
+                score += 1;
+                if(score> hiscoreval){
+                    hiscoreval = score;
+                    localStorage.setItem("highscore", JSON.stringify(hiscoreval));
+                    hiscoreBox.innerHTML = "High Score: "+ hiscoreval;
+                }
+                scoreBox.innerHTML = "Score: "+ score;
                 snakeArr.unshift({x:snakeArr[0].x + inputDir.x, y:snakeArr[0].y + inputDir.y});
                 let a = 2;
                 let b= 16;
@@ -92,6 +104,18 @@
             foodElement.classList.add('food');
             board.appendChild(foodElement);
         }
+        // Main logic start here
+
+        let highscore = localStorage.getItem("highscore");
+        if(highscore === null){
+            hiscoreval = 0;
+            localStorage.setItem("highscore", JSON.stringify(hiscoreval))
+            
+        }
+        else{
+                hiscoreval.JSON.parse(highscore);
+                hiscoreBox.innerHTML = "High Score: "+ highscore;
+            }
 
 
         window.requestAnimationFrame(main);
