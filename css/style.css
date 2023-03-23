@@ -3,8 +3,8 @@
     padding: 0;
     margin: 0;
 }
-.container{
-    background: url("../images/snake-bg.webp");
+.container1{
+    background: url("../images/snake-bg1.jpg");
     min-height: 100vh;
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
@@ -14,9 +14,10 @@
 }
 
 #board{
-    background: linear-gradient(rgb(148, 211, 148),rgb(223, 223, 147));
+    background: linear-gradient(45deg,rgb(61 218 61 / 33%),rgb(92 109 92 / 40%)) ;
     width: 90vmin;
     height: 92vmin;
+    border-radius: 20px;
     border: 2px solid white;
     display: grid;
     grid-template-columns: repeat(18, 1fr);
@@ -25,8 +26,9 @@
 
 #scoreBox{
     position: absolute;
-    top: 9px;
-    right: 150px;
+    top: 20px;
+    color: white;
+    left: 150px;
     font-size: 40px;
     font-weight: bold;
     font-family: 'Delicious Handrawn', cursive;
@@ -34,27 +36,36 @@
 
 #hiscoreBox{
     position: absolute;
-    top: 59px;
-    right: 150px;
+    top: 82px;
+    color: white;
+    left: 150px;
     font-size: 40px;
     font-weight: bold;
     font-family: 'Delicious Handrawn', cursive;
 }
-
+.dropdownBtn{
+    position: absolute;
+    top: 144px;
+    left: 150px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Delicious Handrawn', cursive;
+}
 .head{
-    background: linear-gradient(yellow, red);
-    border: 2px solid purple;
+    background: linear-gradient(#960D19, #9B0805);
+    border: 2px solid #1AE21B;
     transform: scale(1.1);
     border-radius: 20px;
 
 }
 .snake{
-    background-color: purple;
+    background: linear-gradient(#960D19, #0384A3);
+    /* background-color: #0384A3; */
     border: 2px solid white;
     border-radius: 20px;
 }
 .food{
-    background: linear-gradient(purple, red);
-    border: 1px solid black;
+    background: linear-gradient(145deg,#0384A3, #960D19);
+    border: 1px solid #1AE21B;
     border-radius: 8px;
 }
