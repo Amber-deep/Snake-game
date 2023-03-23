@@ -66,6 +66,6 @@
 }
 .food{
     background: linear-gradient(145deg,#0384A3, #960D19);
-    border: 1px solid #1AE21B;
+    border: 1px solid #1AE21B;  
     border-radius: 8px;
 }
